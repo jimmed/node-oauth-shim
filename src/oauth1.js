@@ -103,6 +103,10 @@ module.exports = function(p, callback) {
 			opts.oauth_verifier = p.oauth_verifier;
 		}
 
+        console.log('OAUTH!', p);
+        console.log('TOKEN', token_secret);
+        console.log('...', _token_secrets);
+
 		// If token secret has not been supplied by an access_token in case of a refresh
 		// Get secret from temp storage
 		if (!token_secret && p.oauth_token in _token_secrets) {
